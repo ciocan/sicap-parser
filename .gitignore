@@ -1,0 +1,4 @@
+node_modules/
+build
+run.sh
+log*

@@ -1,0 +1,44 @@
+{
+	"name": "sicap-parser",
+	"version": "1.0.0",
+	"license": "MIT",
+	"bin": "./build/cli.js",
+	"engines": {
+		"node": ">=14"
+	},
+	"scripts": {
+		"dev": "pastel dev",
+		"build": "pastel build",
+		"prepare": "pastel build",
+		"lint": "eslint .",
+		"test": "jest --watch"
+	},
+	"files": [
+		"build"
+	],
+	"dependencies": {
+		"@elastic/elasticsearch": "^7.8.0",
+		"@supercharge/promise-pool": "^1.3.0",
+		"date-fns": "^2.15.0",
+		"fetch-retry": "^4.0.1",
+		"humanize-duration": "^3.23.1",
+		"ink": "^3.0.0",
+		"ink-divider": "^2.0.1",
+		"ink-spinner": "^4.0.0",
+		"lodash": "^4.17.19",
+		"node-fetch": "^2.6.0",
+		"pastel": "^1.0.3",
+		"pretty-ms": "^7.0.0",
+		"prop-types": "^15.7.2",
+		"ramda": "^0.27.1",
+		"react": "^16.13.1"
+	},
+	"devDependencies": {
+		"@babel/preset-env": "^7.11.0",
+		"babel-eslint": "^10.1.0",
+		"babel-jest": "^26.2.2",
+		"eslint-plugin-react": "^7.20.5",
+		"jest": "^26.2.2",
+		"eslint": "^7.5.0"
+	}
+}

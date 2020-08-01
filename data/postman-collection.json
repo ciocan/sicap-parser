@@ -1,0 +1,243 @@
+{
+  "info": {
+    "_postman_id": "2ad57ff2-c78a-46fc-91dd-9f85bade0592",
+    "name": "SICAP",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "achizitii directe",
+      "item": [
+        {
+          "name": "1 GetDirectAcquisitionList",
+          "_postman_id": "93357c8d-fbf2-4ca5-87ec-67b6ce41aad4",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": " application/json;charset=UTF-8", "type": "text" },
+              {
+                "key": "Referer",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pageSize\": 20,\n  \"showOngoingDa\": false,\n  \"cookieContext\": null,\n  \"pageIndex\": 0,\n  \"sysDirectAcquisitionStateId\": null,\n  \"publicationDateStart\": null,\n  \"publicationDateEnd\": null,\n  \"finalizationDateStart\": \"2020-01-20\",\n  \"finalizationDateEnd\": \"2020-01-20\"\n}",
+              "options": { "raw": {} }
+            },
+            "url": "http://e-licitatie.ro/api-pub/DirectAcquisitionCommon/GetDirectAcquisitionList/"
+          },
+          "response": []
+        },
+        {
+          "name": "2 getView",
+          "_postman_id": "6037b44f-9ee9-4a7e-9418-9b888464e3f1",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": " application/json;charset=UTF-8", "type": "text" },
+              {
+                "key": "Referer",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0",
+                "type": "text"
+              }
+            ],
+            "url": "http://e-licitatie.ro/api-pub/PublicDirectAcquisition/getView/100000057"
+          },
+          "response": []
+        },
+        {
+          "name": "3 getCAEntityView",
+          "_postman_id": "cf19035a-1a08-4355-b2b8-62c0c80ac912",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": " application/json;charset=UTF-8", "type": "text" },
+              {
+                "key": "Referer",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0",
+                "type": "text"
+              }
+            ],
+            "url": "http://e-licitatie.ro/api-pub/Entity/getCAEntityView/160511"
+          },
+          "response": []
+        },
+        {
+          "name": "4 getSUEntityView",
+          "_postman_id": "26ed8baa-0e54-4724-9ade-b3d46b531617",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": " application/json;charset=UTF-8", "type": "text" },
+              {
+                "key": "Referer",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0",
+                "type": "text"
+              }
+            ],
+            "url": "http://e-licitatie.ro/api-pub/Entity/getSUEntityView/162637"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "f39b869a-313a-48a6-816a-551baf129c42",
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "licitatii",
+      "item": [
+        {
+          "name": "1 GetCANoticeList",
+          "_postman_id": "74ea5633-5741-4d6e-9c39-af705305f026",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": " application/json;charset=UTF-8", "type": "text" },
+              {
+                "key": "Referer",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sysNoticeTypeIds\": [\n    3,\n    13,\n    18,\n    16,\n    8\n  ],\n  \"sortProperties\": [],\n  \"pageSize\": 2000,\n  \"sysNoticeStateId\": null,\n  \"contractingAuthorityId\": null,\n  \"winnerId\": null,\n  \"cPVCategoryId\": null,\n  \"sysContractAssigmentTypeId\": null,\n  \"cPVId\": null,\n  \"assignedUserId\": null,\n  \"sysAcquisitionContractTypeId\": null,\n  \"pageIndex\": 0,\n  \"startPublicationDate\": \"2020-04-04\",\n  \"endPublicationDate\": \"2020-04-04\"\n}",
+              "options": { "raw": {} }
+            },
+            "url": "http://e-licitatie.ro/api-pub/NoticeCommon/GetCANoticeList/"
+          },
+          "response": []
+        },
+        {
+          "name": "2.1 RFQ_PUBLIC_CANotice",
+          "_postman_id": "fafdfcc0-4b91-40f1-a164-0736ed383430",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": " application/json;charset=UTF-8", "type": "text" },
+              {
+                "key": "Referer",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0",
+                "type": "text"
+              }
+            ],
+            "url": "http://e-licitatie.ro/api-pub/RFQ_PUBLIC_CANotice/get/100140436"
+          },
+          "response": []
+        },
+        {
+          "name": "2.2 C_PUBLIC_CANotice",
+          "_postman_id": "49242bb6-fc1c-436b-9472-536672050e8b",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": " application/json;charset=UTF-8", "type": "text" },
+              {
+                "key": "Referer",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0",
+                "type": "text"
+              }
+            ],
+            "url": "http://e-licitatie.ro/api-pub/C_PUBLIC_CANotice/get/100117755"
+          },
+          "response": []
+        },
+        {
+          "name": "3 GetCANoticeContracts",
+          "_postman_id": "e6c32e53-9e78-43b9-9829-9453b32c7044",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": " application/json;charset=UTF-8", "type": "text" },
+              {
+                "key": "Referer",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"caNoticeId\": 100021599,\n  \"contractNo\": null,\n  \"winnerTitle\": null,\n  \"winnerFiscalNumber\": null,\n  \"contractDate\": {\n    \"from\": null,\n    \"to\": null\n  },\n  \"contractValue\": {\n    \"from\": null,\n    \"to\": null\n  },\n  \"contractMinOffer\": {\n    \"from\": null,\n    \"to\": null\n  },\n  \"contractMaxOffer\": {\n    \"from\": null,\n    \"to\": null\n  },\n  \"contractTitle\": null,\n  \"lots\": null,\n  \"sortOrder\": [],\n  \"sysContractFrameworkType\": {},\n  \"skip\": 0,\n  \"take\": 5\n}",
+              "options": { "raw": {} }
+            },
+            "url": "http://e-licitatie.ro/api-pub/C_PUBLIC_CANotice/GetCANoticeContracts"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "caff4999-be26-40f4-aee0-4b81b53e643b",
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "licitatii [old]",
+      "item": [
+        {
+          "name": "1 GetCANoticeList",
+          "_postman_id": "6a895906-b9d1-44ad-b4d6-9160a591e806",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "type": "text", "value": " application/json;charset=UTF-8" },
+              {
+                "key": "Referer",
+                "type": "text",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sysNoticeTypeIds\": [\n    3,\n    13,\n    18,\n    16,\n    8\n  ],\n  \"sortProperties\": [],\n  \"pageSize\": 2000,\n  \"sysNoticeStateId\": null,\n  \"contractingAuthorityId\": null,\n  \"winnerId\": null,\n  \"cPVCategoryId\": null,\n  \"sysContractAssigmentTypeId\": null,\n  \"cPVId\": null,\n  \"assignedUserId\": null,\n  \"sysAcquisitionContractTypeId\": null,\n  \"pageIndex\": 0,\n  \"startPublicationDate\": \"2015-12-14\",\n  \"endPublicationDate\": \"2015-12-14\"\n}",
+              "options": { "raw": {} }
+            },
+            "url": "http://istoric.e-licitatie.ro/api-pub/NoticeCommon/GetCANoticeList/"
+          },
+          "response": []
+        },
+        {
+          "name": "2.2 C_PUBLIC_CANotice",
+          "_postman_id": "956b85b0-73a4-43a5-a4b0-b853a9f59361",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": " application/json;charset=UTF-8", "type": "text" },
+              {
+                "key": "Referer",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0",
+                "type": "text"
+              }
+            ],
+            "url": "http://istoric.e-licitatie.ro/api-pub/RFQ_PUBLIC_CANotice/get/440246"
+          },
+          "response": []
+        },
+        {
+          "name": "3 GetCANoticeContracts",
+          "_postman_id": "43abb235-0f08-4ff4-8d89-19630c7eafea",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "type": "text", "value": " application/json;charset=UTF-8" },
+              {
+                "key": "Referer",
+                "type": "text",
+                "value": " https://e-licitatie.ro/pub/notices/contract-notices/list/0/0"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"caNoticeId\": 80813,\n  \"contractNo\": null,\n  \"winnerTitle\": null,\n  \"winnerFiscalNumber\": null,\n  \"contractDate\": {\n    \"from\": null,\n    \"to\": null\n  },\n  \"contractValue\": {\n    \"from\": null,\n    \"to\": null\n  },\n  \"contractMinOffer\": {\n    \"from\": null,\n    \"to\": null\n  },\n  \"contractMaxOffer\": {\n    \"from\": null,\n    \"to\": null\n  },\n  \"contractTitle\": null,\n  \"lots\": null,\n  \"sortOrder\": [],\n  \"sysContractFrameworkType\": {},\n  \"skip\": 0,\n  \"take\": 200\n}",
+              "options": { "raw": {} }
+            },
+            "url": "http://istoric.e-licitatie.ro/api-pub/C_PUBLIC_CANotice/GetCANoticeContracts"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "2c9d39c4-00e0-46ab-9766-6b42284a47a0",
+      "protocolProfileBehavior": {}
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
