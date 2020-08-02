@@ -2,6 +2,8 @@
 
 **sicap-parser** este un utilitar pentru a extrage informatiile despre licitatiile publice si achizitiile directe din portalul SEAP/SICAP si a le indexa in Elasticsearch
 
+Pentru vizualizarea datelor foloseste tutorialul de [aici](https://github.com/arhiva-sicap/sicap-explorer)
+
 **Mod de utilizare:**
 
 ```bash
@@ -39,7 +41,7 @@ Options:
 Instalare:
 
 ```bash
-git clone git@github.com:sicap-ai/sicap-parser.git
+git clone git@github.com:arhiva-sicap/sicap-parser.git
 npm install
 npm link
 ```
@@ -86,7 +88,7 @@ Pentru a vedea exact cum sunt transformate raspunsurile primite vezi codul sursa
 
 Daca vrei sa accesezi api-urile intr-un mod mai usor poti folosi [Postman](https://www.postman.com/) importand [colectia](./data/postman-collection.json) special special exportata.
 
-Pentru a salva timp si latime de banda poti importa in Elasticsearch [arhiva salvata](./data/link.torrent) ce contine 470k licitatii publice din periada 2007- iulie 2020.
+Pentru a salva timp si latime de banda poti instala [sicap-explorer](https://github.com/arhiva-sicap/sicap-explorer) - contine tutorial cum sa importi in Elasticsearch [arhiva salvata](https://github.com/arhiva-sicap/sicap-explorer/blob/master/arhiva-sicap.torrent) ce contine 470k licitatii publice si 22m achizitii directe din periada 2007- iulie 2020.
 
 ```bash
 elasticdump \
