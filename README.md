@@ -43,6 +43,7 @@ Instalare:
 ```bash
 git clone git@github.com:arhiva-sicap/sicap-parser.git
 npm install
+npm run build
 npm link
 ```
 
