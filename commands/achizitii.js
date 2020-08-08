@@ -8,7 +8,7 @@ import fs from "fs"
 
 import { Container, Error, Progress } from "../components"
 import { checkDate, getDurationInMilliseconds } from "../lib/utils"
-import { getAllDirect, getPublicDirectAcquisition, getSUEntityView, getCAEntityView } from "../lib/sicap-api.js"
+import { getAllDirect, getPublicDirectAcquisition, getAuthority, getSupplier } from "../lib/sicap-api.js"
 import { transformPublicDirectAcquisition, transformSupplier, transformAuthority } from "../lib/transformers.js"
 
 const start = process.hrtime()
@@ -27,7 +27,6 @@ function Achizitii({ date, host, index, concurrency, archive }) {
 
   const processDay = async () => {
     const [dd, mm, yyyy] = date.split("-")
-
     const cpvs = fs
       .readFileSync("cpvs.txt", "utf8")
       .split("\n")
@@ -55,10 +54,11 @@ function Achizitii({ date, host, index, concurrency, archive }) {
 
             const id = item.directAcquisitionId
             const publicDirectAcquisition = await getPublicDirectAcquisition(id, { istoric: archive })
-            const authority = await getCAEntityView(publicDirectAcquisition.contractingAuthorityID, {
+            const authority = await getAuthority(publicDirectAcquisition.contractingAuthorityID, {
               istoric: archive,
+              client,
             })
-            const supplier = await getSUEntityView(publicDirectAcquisition.supplierId, { istoric: archive })
+            const supplier = await getSupplier(publicDirectAcquisition.supplierId, { istoric: archive, client })
 
             const doc = {
               item,
