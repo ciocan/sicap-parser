@@ -7,7 +7,7 @@ import es from "@elastic/elasticsearch"
 import PromisePool from "@supercharge/promise-pool"
 
 import { Container, Error, Progress } from "../components"
-import { checkDate, getDurationInMilliseconds } from "../lib/utils"
+import { checkDate, getDurationInMilliseconds, yesterday } from "../lib/utils"
 import { getAll, getPublicNotice, getPublicNoticeContracts } from "../lib/sicap-api.js"
 import { transformItem, transformPublicNotice, transformNoticeContracts } from "../lib/transformers.js"
 
@@ -100,8 +100,8 @@ function Licitatii({ date, host, index, concurrency, archive }) {
 }
 
 Licitatii.propTypes = {
-  /// Data in format zz-ll-aaaa
-  date: PropTypes.string.isRequired,
+  /// Data in format zz-ll-aaaa - default ziua precedenta
+  date: PropTypes.string,
   /// Url Elasticsearch (default localhost:9200)
   host: PropTypes.string,
   /// Indexul Elasticsearch folosit pentru licitatiile publice (default licitatii-publice)
@@ -117,6 +117,7 @@ Licitatii.defaultProps = {
   index: "licitatii-publice",
   concurrency: 5,
   archive: false,
+  date: yesterday(),
 }
 
 Licitatii.shortFlags = {

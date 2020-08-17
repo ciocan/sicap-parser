@@ -8,7 +8,7 @@ import fs from "fs"
 import fetch from "node-fetch"
 
 import { Container, Error, Progress } from "../components"
-import { checkDate, getDurationInMilliseconds } from "../lib/utils"
+import { checkDate, getDurationInMilliseconds, yesterday } from "../lib/utils"
 import { getAllDirect, getPublicDirectAcquisition, getAuthority, getSupplier } from "../lib/sicap-api.js"
 import { transformPublicDirectAcquisition, transformSupplier, transformAuthority } from "../lib/transformers.js"
 
@@ -118,8 +118,8 @@ function Achizitii({ date, host, index, concurrency, archive }) {
 }
 
 Achizitii.propTypes = {
-  /// Data in format zz-ll-aaaa
-  date: PropTypes.string.isRequired,
+  /// Data in format zz-ll-aaaa - default ziua precedenta
+  date: PropTypes.string,
   /// Url Elasticsearch (default localhost:9200)
   host: PropTypes.string,
   /// Indexul Elasticsearch folosit pentru licitatiile publice (default licitatii-publice)
@@ -135,6 +135,7 @@ Achizitii.defaultProps = {
   index: "achizitii-directe",
   concurrency: 5,
   archive: false,
+  date: yesterday(),
 }
 
 Achizitii.shortFlags = {
