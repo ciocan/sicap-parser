@@ -5,6 +5,7 @@ import prettyMs from "pretty-ms"
 import es from "@elastic/elasticsearch"
 import PromisePool from "@supercharge/promise-pool"
 import fs from "fs"
+import fetch from "node-fetch"
 
 import { Container, Error, Progress } from "../components"
 import { checkDate, getDurationInMilliseconds } from "../lib/utils"
@@ -27,10 +28,10 @@ function Achizitii({ date, host, index, concurrency, archive }) {
 
   const processDay = async () => {
     const [dd, mm, yyyy] = date.split("-")
-    const cpvs = fs
-      .readFileSync("cpvs.txt", "utf8")
-      .split("\n")
-      .map((line) => line.split("|")[0])
+
+    const response = await fetch("http://raw.githubusercontent.com/arhiva-sicap/sicap-parser/master/cpvs.txt")
+    const cpvsTxt = await response.text()
+    const cpvs = cpvsTxt.split("\n").map((line) => line.split("|")[0])
 
     setTotalCpvs(cpvs.length)
 
