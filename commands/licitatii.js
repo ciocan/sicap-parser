@@ -15,7 +15,11 @@ const start = process.hrtime()
 
 /// Indexeaza licitatiile publice
 function Licitatii({ date, host, index, concurrency, archive }) {
-  const client = new es.Client({ node: host })
+  const client = new es.Client({ node: host, 
+    tls: {
+      rejectUnauthorized: false,
+    },
+  })
 
   const [total, setTotal] = useState(0)
   const [current, setCurrent] = useState(0)

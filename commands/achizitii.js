@@ -16,7 +16,11 @@ const start = process.hrtime()
 
 /// Indexeaza achizitiile directe
 function Achizitii({ date, host, index, concurrency, archive }) {
-  const client = new es.Client({ node: host })
+  const client = new es.Client({ node: host, 
+    tls: {
+      rejectUnauthorized: false,
+    },
+  })
 
   const [total, setTotal] = useState(0)
   const [totalCpvs, setTotalCpvs] = useState(0)
