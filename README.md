@@ -1,5 +1,8 @@
 # sicap-parser
 
+> [!WARNING]
+> Începând din martie 2025, platforma e-licitatie.ro a implementat limitări de acces pe fiecare endpoint, iar numărul de solicitări per secundă (req/s) admise nu este public. Dacă trimiți prea multe solicitări, adresa ta IP ar putea fi blocată, așa că folosește serviciul cu prudență.
+
 **sicap-parser** este un utilitar pentru a extrage informatiile despre licitatiile publice si achizitiile directe din portalul SEAP/SICAP si a le indexa in Elasticsearch
 
 Pentru vizualizarea datelor foloseste tutorialul de [aici](https://github.com/ciocan/sicap-explorer)
